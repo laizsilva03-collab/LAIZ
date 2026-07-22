@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><base href="https://d16ilfvy4mv02r.cloudfront.net/workspaces/HzQnpi9AxwRGyZzGLhxnMYRorhyH0xd6/e7273361-b816-4ab5-a5f6-428a8b81feac/files/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZEFER MECANICA</title>
+<style>
+  :root{
+    --bg:#0f1620; --panel:#16202e; --panel2:#1e2a3a; --line:#2a3a4e;
+    --txt:#e6edf3; --muted:#8aa0b4; --accent:#00d9a3; --accent2:#0a84ff;
+    --danger:#ff5d5d; --warn:#ffb84d; --ok:#3ddc84;
+    --shadow:0 8px 24px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+    font-family:'Segoe UI',Roboto,system-ui,sans-serif;font-size:14px;height:100%}
+  a{color:var(--accent2)}
+  button{font-family:inherit;cursor:pointer;border:none;border-radius:8px;
+    padding:9px 14px;font-size:13px;background:var(--panel2);color:var(--txt);
+    transition:.15s;border:1px solid var(--line)}
+  button:hover{background:#28384e;border-color:var(--accent)}
+  button.primary{background:var(--accent);color:#062018;font-weight:600;border-color:transparent}
+  button.primary:hover{background:#27f0b6}
+  button.danger{background:transparent;color:var(--danger);border-color:var(--danger)}
+  button.danger:hover{background:var(--danger);color:#fff}
+  button.small{padding:5px 9px;font-size:12px}
+  input,select,textarea{font-family:inherit;background:var(--bg);color:var(--txt);
+    border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;width:100%}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  label{display:block;font-size:12px;color:var(--muted);margin:6px 0 3px}
+  .app{display:flex;flex-direction:column;height:100vh}
+  /* Header */
+  header.topbar{display:flex;align-items:center;gap:16px;padding:10px 18px;
+    background:linear-gradient(90deg,#0b1320,#16263a);border-bottom:2px solid var(--accent);
+    box-shadow:var(--shadow);z-index:20}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:1px}
+  .logo .mark{width:34px;height:34px;border-radius:8px;background:var(--accent);
+    display:flex;align-items:center;justify-content:center;color:#062018;font-weight:900;font-size:16px}
+  .logo small{display:block;font-size:10px;color:var(--muted);font-weight:500;letter-spacing:2px}
+  .top-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+  /* Layout */
+  .layout{display:flex;flex:1;min-height:0}
+  aside.sidebar{width:280px;background:var(--panel);border-right:1px solid var(--line);
+    display:flex;flex-direction:column;min-height:0}
+  .sidebar-head{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:center}
+  .sidebar-head h3{margin:0;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+  .eq-list{flex:1;overflow:auto;padding:8px}
+  .eq-item{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:8px;
+    cursor:pointer;margin-bottom:4px;border:1px solid transparent}
+  .eq-item:hover{background:var(--panel2)}
+  .eq-item.active{background:#13384a;border-color:var(--accent)}
+  .eq-item .name{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .eq-item .meta{font-size:10px;color:var(--muted)}
+  .eq-empty{padding:18px;color:var(--muted);text-align:center;font-size:12px}
+  /* Main */
+  main.main{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0}
+  nav.tabs{display:flex;gap:2px;padding:0 12px;background:var(--panel);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .tab{padding:12px 16px;cursor:pointer;font-weight:600;font-size:13px;color:var(--muted);
+    border-bottom:3px solid transparent;white-space:nowrap}
+  .tab:hover{color:var(--txt)}
+  .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+  .tab .badge{display:inline-block;margin-left:6px;background:var(--panel2);color:var(--muted);
+    border-radius:10px;padding:1px 7px;font-size:10px}
+  .tab.active .badge{background:#13384a;color:var(--accent)}
+  .content{flex:1;overflow:auto;padding:20px;min-height:0}
+  .panel{display:none}
+  .panel.active{display:block}
+  /* Cards / grids */
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+  .card h2{margin:0 0 14px;font-size:16px;display:flex;align-items:center;gap:8px}
+  .card .sub{color:var(--muted);font-size:12px;font-weight:400}
+  .grid{display:grid;gap:14px}
+  .grid2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .grid3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .row > *{flex:0 0 auto}
+  .spacer{flex:1}
+  .muted{color:var(--muted)}
+  .pill{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11px;font-weight:600}
+  .pill.ok{background:rgba(61,220,132,.15);color:var(--ok)}
+  .pill.warn{background:rgba(255,184,77,.15);color:var(--warn)}
+  .pill.info{background:rgba(10,132,255,.15);color:var(--accent2)}
+  .pill.danger{background:rgba(255,93,93,.15);color:var(--danger)}
+  /* Tables */
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px;
+    position:sticky;top:0;background:var(--panel)}
+  tr:hover{background:var(--panel2)}
+  td input,td select{padding:5px 7px;font-size:12px}
+  .table-wrap{max-height:420px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+  /* Viewers */
+  .viewer{width:100%;height:480px;background:#0a121d;border:1px solid var(--line);
+    border-radius:12px;position:relative;overflow:hidden}
+  .viewer canvas{display:block;width:100%;height:100%}
+  .viewer .hint{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:20px;gap:8px}
+  .viewer .ctl{position:absolute;top:10px;right:10px;display:flex;gap:6px;z-index:5}
+  /* Dropzone */
+  .drop{border:2px dashed var(--line);border-radius:12px;padding:26px;text-align:center;
+    color:var(--muted);cursor:pointer;transition:.15s;background:var(--panel)}
+  .drop:hover,.drop.drag{border-color:var(--accent);color:var(--accent);background:#13202c}
+  .drop .big{font-size:28px;margin-bottom:6px}
+  .file-chip{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--panel2);
+    border:1px solid var(--line);border-radius:8px;margin-bottom:6px;font-size:12px}
+  .file-chip .fn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  /* Modal */
+  .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;
+    align-items:center;justify-content:center;z-index:100;padding:20px}
+  .modal-bg.show{display:flex}
+  .modal{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:20px;width:480px;max-width:100%;box-shadow:var(--shadow)}
+  .modal h2{margin:0 0 14px}
+  .modal .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+  /* Toast */
+  #toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:200;
+    display:flex;flex-direction:column;gap:8px;align-items:center}
+  .toast{background:var(--panel2);border:1px solid var(--accent);color:var(--txt);
+    padding:10px 18px;border-radius:10px;box-shadow:var(--shadow);font-size:13px}
+  .toast.err{border-color:var(--danger)}
+  .toast.ok{border-color:var(--ok)}
+  /* Parts (exploded) */
+  .part-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+  .part-card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px}
+  .part-card .ph{width:100%;height:90px;background:var(--bg);border-radius:8px;margin-bottom:8px;
+    display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px;overflow:hidden}
+  .part-card .ph img{max-width:100%;max-height:100%;object-fit:contain}
+  .part-card .code{font-weight:700;color:var(--accent);font-size:12px}
+  .part-card .name{font-size:12px;margin:2px 0 6px;min-height:30px}
+  .part-card .qty{font-size:11px;color:var(--muted)}
+  .part-card .acts{display:flex;gap:4px;margin-top:8px}
+  .stat{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+  .stat .box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:120px}
+  .stat .box .n{font-size:22px;font-weight:800;color:var(--accent)}
+  .stat .box .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+  .help{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
+  .help b{color:var(--txt)}
+  .scroll{max-height:520px;overflow:auto}
+  ::-webkit-scrollbar{width:10px;height:10px}
+  ::-webkit-scrollbar-thumb{background:#2a3a4e;border-radius:6px}
+  ::-webkit-scrollbar-track{background:transparent}
+  .sep{height:1px;background:var(--line);margin:14px 0}
+  .note{background:rgba(10,132,255,.08);border-left:3px solid var(--accent2);padding:10px 12px;
+    border-radius:0 8px 8px 0;font-size:12px;color:var(--muted);margin-bottom:12px}
+  .note b{color:var(--txt)}
+  .map-row{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+  .map-row select{flex:1}
+  .map-row .src{min-width:120px;flex:0 0 120px;font-size:11px;color:var(--muted)}
+  .preview-data{max-height:240px;overflow:auto;border:1px solid var(--line);border-radius:8px;margin:10px 0}
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- TOP -->
+  <header class="topbar">
+    <div class="logo">
+      <div class="mark">Z</div>
+      <div>ZEFER MECANICA
+        <small>GERENCIADOR DE EQUIPAMENTOS · BOM · 2D · 3D · VISTA EXLODIDA</small>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="small" id="btnExportJson">⬇ Backup (JSON)</button>
+      <label class="small" style="margin:0">
+        <input type="file" id="fileImportJson" accept=".json" style="display:none">
+        <button class="small" onclick="document.getElementById('fileImportJson').click()">⬆ Restaurar</button>
+      </label>
+      <button class="primary small" id="btnNewEq">+ Novo Equipamento</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-head"><h3>Equipamentos</h3><div class="spacer"></div>
+        <span class="muted" id="eqCount">0</span></div>
+      <div class="eq-list" id="eqList"></div>
+      <div style="padding:10px 14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)">
+        Dados salvos no seu navegador (IndexedDB).
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <nav class="tabs" id="tabs">
+        <div class="tab active" data-tab="info">📋 Equipamento</div>
+        <div class="tab" data-tab="view2d">📐 Vista 2D</div>
+        <div class="tab" data-tab="view3d">🧊 Vista 3D</div>
+        <div class="tab" data-tab="exploded">💥 Vista Explodida</div>
+        <div class="tab" data-tab="bom">🧾 Lista de Materiais</div>
+        <div class="tab" data-tab="import">📥 Importação Inteligente</div>
+      </nav>
+
+      <div class="content" id="content">
+
+        <!-- PANEL: INFO -->
+        <section class="panel active" id="p-info">
+          <div class="card">
+            <h2>📋 Informações do Equipamento <span class="sub" id="infoStatus"></span></h2>
+            <div class="grid grid2">
+              <div><label>Nome do equipamento</label><input id="fName" placeholder="Ex.: Prensa Pneumática 20T"></div>
+              <div><label>Código / Tag</label><input id="fCode" placeholder="Ex.: ZF-001"></div>
+              <div><label>Categoria</label>
+                <select id="fCat">
+                  <option>Pneumático</option><option>Hidráulico</option><option>Mecânico</option>
+                  <option>Elétrico</option><option>Misto</option><option>Outro</option>
+                </select></div>
+              <div><label>Local / Linha</label><input id="fLoc" placeholder="Ex.: Oficina 1"></div>
+            </div>
+            <label>Descrição</label>
+            <textarea id="fDesc" rows="3" placeholder="Descreva o equipamento, função e observações..."></textarea>
+            <div class="row" style="margin-top:12px">
+              <button class="primary" id="btnSaveInfo">💾 Salvar</button>
+              <button id="btnDuplicateEq">⧉ Duplicar</button>
+              <div class="spacer"></div>
+              <button class="danger" id="btnDeleteEq">🗑 Excluir Equipamento</button>
+            </div>
+            <div class="stat" style="margin-top:16px">
+              <div class="box"><div class="n" id="st2d">0</div><div class="l">Desenhos 2D</div></div>
+              <div class="box"><div class="n" id="st3d">0</div><div class="l">Modelos 3D</div></div>
+              <div class="box"><div class="n" id="stParts">0</div><div class="l">Peças</div></div>
+              <div class="box"><div class="n" id="stBom">0</div><div class="l">Itens BOM</div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PANEL: 2D -->
+        <section class="panel" id="p-view2d">
+          <div class="card">
+            <h2>📐 Vista 2D <span class="sub">Importe PDF / DXF / DWG / imagens dos desenhos</span></h2>
+            <div class="drop" id="drop2d">
+              <div class="big">📄</div>
+              <div>Arraste arquivos 2D aqui ou <b>clique para selecionar</b></div>
+              <div class="muted" style="font-size:11px;margin-top:6px">PDF · DXF · PNG · JPG · SVG</div>
+              <input type="file" id="file2d" multiple accept=".pdf,.dxf,.dwg,.png,.jpg,.jpeg,.svg" style="display:none">
+            </div>
+            <div class="note"><b>DXF</b> é renderizado no navegador. <b>DWG</b> é um formato fechado — o arquivo fica armazenado para download e exportação (converta para DXF para visualizar). <b>PDF</b> é renderizado com pdf.js.</div>
+            <div id="list2d" style="margin-top:12px"></div>
+          </div>
+          <div class="card">
+            <h2>Visualizador 2D</h2>
+            <div class="viewer" id="viewer2d"><div class="hint">Selecione um desenho na lista acima para visualizar</div></div>
+            <div class="row" style="margin-top:10px">
+              <button class="small" id="btnZoomIn2d">+</button>
+              <button class="small" id="btnZoomOut2d">−</button>
+              <button class="small" id="btnFit2d">Ajustar</button>
+              <div class="spacer"></div>
+              <button class="small" id="btnDownload2d">⬇ Baixar arquivo original</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- PANEL: 3D -->
+        <section class="panel" id="p-view3d">
+          <div class="card">
+            <h2>🧊 Vista 3D <span class="sub">Importe STL / OBJ / STEP</span></h2>
+            <div class="drop" id="drop3d">
+              <div class="big">🧊</div>
+              <div>Arraste arquivos 3D aqui ou <b>clique para selecionar</b></div>
+              <div class="muted" style="font-size:11px;margin-top:6px">STL · OBJ · STEP / STP</div>
+              <input type="file" id="file3d" multiple accept=".stl,.obj,.step,.stp" style="display:none">
+            </div>
+            <div class="note"><b>STL</b> e <b>OBJ</b> são renderizados em 3D (girar/zoom). <b>STEP/STP</b> é um formato CAD que o navegador não decodifica nativamente — o arquivo fica armazenado para download/exportação. Para visualizar STEP, exporte para STL/OBJ no seu CAD antes.</div>
+            <div id="list3d" style="margin-top:12px"></div>
+          </div>
+          <div class="card">
+            <h2>Visualizador 3D</h2>
+            <div class="viewer" id="viewer3d"><div class="hint">Selecione um modelo 3D na lista acima<br><span class="muted">Arraste para girar · Scroll para zoom · Botão direito para mover</span></div></div>
+            <div class="row" style="margin-top:10px">
+              <button class="small" id="btn3dFit">Ajustar câmera</button>
+              <button class="small" id="btn3dWire">Sólido/Aramado</button>
+              <button class="small" id="btn3dAxes">Eixos</button>
+              <div class="spacer"></div>
+              <button class="small" id="btnDownload3d">⬇ Baixar arquivo original</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- PANEL: EXPLODED -->
+        <section class="panel" id="p-exploded">
+          <div class="card">
+            <h2>💥 Vista Explodida <span class="sub">Cada peça separada, com download individual</span></h2>
+            <div class="row" style="margin-bottom:12px">
+              <button class="primary small" id="btnAddPart">+ Adicionar Peça</button>
+              <button class="small" id="btnImportParts">📥 Importar peças (Excel/PDF)</button>
+              <button class="small" id="btnExportPartsZip">⬇ Exportar tudo (ZIP)</button>
+              <button class="small" id="btnExportPartsCsv">⬇ Exportar lista (CSV)</button>
+            </div>
+            <div class="part-grid" id="partGrid"></div>
+          </div>
+          <div class="card">
+            <h2>Visualização Explodida 3D</h2>
+            <div class="viewer" id="viewerExploded"><div class="hint">As peças importadas em STL/OBJ aparecem aqui, dispostas lado a lado (explodido)</div></div>
+            <div class="row" style="margin-top:10px">
+              <button class="small" id="btnExpFit">Ajustar</button>
+              <button class="small" id="btnExpAxes">Eixos</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- PANEL: BOM -->
+        <section class="panel" id="p-bom">
+          <div class="card">
+            <h2>🧾 Lista de Materiais (BOM) <span class="sub">Código · Quantidade · Descrição</span></h2>
+            <div class="row" style="margin-bottom:12px">
+              <button class="primary small" id="btnBomAdd">+ Adicionar item</button>
+              <button class="small" id="btnBomImport">📥 Importar BOM (Excel/PDF)</button>
+              <button class="small" id="btnBomExportXlsx">⬇ Excel</button>
+              <button class="small" id="btnBomExportCsv">⬇ CSV</button>
+              <button class="small" id="btnBomExportPdf">⬇ PDF</button>
+              <div class="spacer"></div>
+              <input id="bomSearch" placeholder="🔎 filtrar..." style="max-width:220px">
+            </div>
+            <div class="table-wrap">
+              <table id="bomTable">
+                <thead><tr>
+                  <th style="width:60px">#</th>
+                  <th>Código</th><th>Descrição</th><th style="width:80px">Qtd</th>
+                  <th style="width:80px">Un.</th><th>Material</th>
+                  <th style="width:110px">Fornecedor</th><th style="width:70px">Ações</th>
+                </tr></thead>
+                <tbody id="bomBody"></tbody>
+              </table>
+            </div>
+            <div class="help"><b>Total de itens:</b> <span id="bomTotal">0</span> · <b>Quantidade total de peças:</b> <span id="bomQty">0</span></div>
+          </div>
+        </section>
+
+        <!-- PANEL: IMPORT -->
+        <section class="panel" id="p-import">
+          <div class="card">
+            <h2>📥 Importação Inteligente <span class="sub">Excel / PDF → o programa lê e distribui nos campos</span></h2>
+            <div class="drop" id="dropSmart">
+              <div class="big">📥</div>
+              <div>Arraste Excel ou PDF aqui ou <b>clique para selecionar</b></div>
+              <div class="muted" style="font-size:11px;margin-top:6px">XLSX · XLS · CSV · PDF</div>
+              <input type="file" id="fileSmart" accept=".xlsx,.xls,.csv,.pdf" style="display:none">
+            </div>
+            <div id="smartArea" style="margin-top:12px"></div>
+          </div>
+          <div class="card">
+            <h2>Como funciona a leitura inteligente</h2>
+            <div class="help">
+              <p>O programa examina cada coluna do Excel ou cada tabela/parágrafo do PDF e procura por <b>palavras-chave</b> para descobrir o que cada campo significa — você não precisa que a planilha venha em um formato fixo.</p>
+              <p><b>Código:</b> código, cod, part number, ref, item, peça<br>
+              <b>Descrição:</b> descrição, desc, nome, material, peça, componente<br>
+              <b>Quantidade:</b> qtd, quantidade, qty, q., amount<br>
+              <b>Unidade:</b> un, unid, unit, unidade<br>
+              <b>Material:</b> material, espec, especificação<br>
+              <b>Fornecedor:</b> fornecedor, supplier, fabricante, marca</p>
+              <p>Após ler, você <b>confere o mapeamento</b> coluna→campo, ajusta se quiser, escolhe o destino (BOM do equipamento, ou Peças da Vista Explodida) e clica em <b>Importar</b>.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal" id="modalBox"></div>
+</div>
+
+<div id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dxf-parser@1.1.2/dist/dxf-parser.min.js"></script>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/" } }
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+
+if (window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+/* ============ STATE ============ */
+const DB_NAME='zefer_mecanica', STORE='files';
+let db=null;
+let equipments=[];          // metadata array
+let currentId=null;         // selected equipment id
+let viewers={};             // viewer instances
+
+/* ============ IndexedDB (file blobs) ============ */
+function openDB(){
+  return new Promise((res,rej)=>{
+    const r=indexedDB.open(DB_NAME,1);
+    r.onupgradeneeded=()=>{ r.result.createObjectStore(STORE,{keyPath:'id'}) };
+    r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error);
+  });
+}
+function dbPut(item){ return new Promise((res,rej)=>{ const tx=db.transaction(STORE,'readwrite'); tx.objectStore(STORE).put(item); tx.oncomplete=()=>res(); tx.onerror=()=>rej(tx.error); }); }
+function dbGet(id){ return new Promise((res,rej)=>{ const tx=db.transaction(STORE,'readonly'); const rq=tx.objectStore(STORE).get(id); rq.onsuccess=()=>res(rq.result); rq.onerror=()=>rej(rq.error); }); }
+function dbDel(id){ return new Promise((res,rej)=>{ const tx=db.transaction(STORE,'readwrite'); tx.objectStore(STORE).delete(id); tx.oncomplete=()=>res(); tx.onerror=()=>rej(tx.error); }); }
+
+/* localStorage stores equipment metadata (no blobs) */
+function saveMeta(){
+  try{ localStorage.setItem('zefer_eqs', JSON.stringify(equipments)); }catch(e){ toast('Erro ao salvar: armazenamento cheio','err'); }
+}
+function loadMeta(){
+  try{ equipments=JSON.parse(localStorage.getItem('zefer_eqs')||'[]'); }catch(e){ equipments=[]; }
+}
+
+/* ============ HELPERS ============ */
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const extOf=(n)=>(n.split('.').pop()||'').toLowerCase();
+function toast(msg,type='ok'){ const t=document.createElement('div'); t.className='toast '+type; t.textContent=msg; document.getElementById('toast').appendChild(t); setTimeout(()=>t.remove(),3200); }
+function blobToBase64(blob){ return new Promise(res=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.readAsDataURL(blob); }); }
+function dataURLtoBlob(d){ const [h,b]=d.split(','); const m=h.match(/:(.*?);/)[1]; const bin=atob(b); const a=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i); return new Blob([a],{type:m}); }
+async function fileToBlob(file){ return file; } // keep as blob
+async function blobToDataURL(blob){ return blobToBase64(blob); }
+function download(filename, content, type='application/octet-stream'){
+  const blob = content instanceof Blob ? content : new Blob([content],{type});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=filename; a.click(); setTimeout(()=>URL.revokeObjectURL(url),4000);
+}
+
+/* ============ EQUIPMENT CRUD ============ */
+function newEquipment(){
+  const eq={ id:uid(), name:'Novo Equipamento', code:'', category:'Mecânico', location:'', description:'',
+             files2d:[], files3d:[], parts:[], bom:[] };
+  equipments.push(eq); currentId=eq.id; saveMeta(); renderSidebar(); selectEq(eq.id);
+  document.getElementById('fName').focus();
+}
+function currentEq(){ return equipments.find(e=>e.id===currentId); }
+function selectEq(id){
+  currentId=id; renderSidebar(); loadEqForm(); renderAll(); document.querySelector('.tab[data-tab="info"]').click();
+}
+function deleteEq(id){
+  const eq=equipments.find(e=>e.id===id); if(!eq) return;
+  [...eq.files2d,...eq.files3d,...eq.parts].forEach(f=>{ if(f.fileId) dbDel(f.fileId); });
+  equipments=equipments.filter(e=>e.id!==id);
+  if(currentId===id) currentId=equipments[0]?.id||null;
+  saveMeta(); renderSidebar(); if(currentId){ loadEqForm(); renderAll(); } else { blankForm(); }
+}
+function duplicateEq(){
+  const eq=currentEq(); if(!eq) return;
+  const copy=JSON.parse(JSON.stringify(eq)); copy.id=uid(); copy.name=eq.name+' (cópia)';
+  copy.files2d=copy.files2d.map(f=>({...f,id:uid()}));
+  copy.files3d=copy.files3d.map(f=>({...f,id:uid()}));
+  copy.parts=copy.parts.map(p=>({...p,id:uid()}));
+  copy.bom=copy.bom.map(b=>({...b,id:uid()}));
+  equipments.push(copy); saveMeta(); renderSidebar(); selectEq(copy.id);
+}
+
+/* ============ RENDER SIDEBAR ============ */
+function renderSidebar(){
+  const list=document.getElementById('eqList');
+  document.getElementById('eqCount').textContent=equipments.length;
+  if(!equipments.length){ list.innerHTML='<div class="eq-empty">Nenhum equipamento.<br>Clique em <b>+ Novo Equipamento</b>.</div>'; return; }
+  list.innerHTML=equipments.map(e=>`
+    <div class="eq-item ${e.id===currentId?'active':''}" data-id="${e.id}">
+      <span class="name">${esc(e.name)||'Sem nome'}</span>
+      <span class="meta">${e.code||''}</span>
+    </div>`).join('');
+  list.querySelectorAll('.eq-item').forEach(el=>el.onclick=()=>selectEq(el.dataset.id));
+}
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ============ FORM ============ */
+function blankForm(){ ['fName','fCode','fLoc','fDesc'].forEach(id=>document.getElementById(id).value=''); document.getElementById('fCat').value='Mecânico'; updateStats(); }
+function loadEqForm(){
+  const e=currentEq(); if(!e){ blankForm(); return; }
+  document.getElementById('fName').value=e.name||'';
+  document.getElementById('fCode').value=e.code||'';
+  document.getElementById('fCat').value=e.category||'Mecânico';
+  document.getElementById('fLoc').value=e.location||'';
+  document.getElementById('fDesc').value=e.description||'';
+  updateStats();
+}
+function updateStats(){
+  const e=currentEq(); if(!e) return;
+  document.getElementById('st2d').textContent=e.files2d.length;
+  document.getElementById('st3d').textContent=e.files3d.length;
+  document.getElementById('stParts').textContent=e.parts.length;
+  document.getElementById('stBom').textContent=e.bom.length;
+}
+function saveInfo(){
+  const e=currentEq(); if(!e){ toast('Crie um equipamento primeiro','err'); return; }
+  e.name=document.getElementById('fName').value.trim()||'Sem nome';
+  e.code=document.getElementById('fCode').value.trim();
+  e.category=document.getElementById('fCat').value;
+  e.location=document.getElementById('fLoc').value.trim();
+  e.description=document.getElementById('fDesc').value.trim();
+  saveMeta(); renderSidebar(); toast('Equipamento salvo');
+}
+
+/* ============ TABS ============ */
+document.getElementById('tabs').addEventListener('click',ev=>{
+  const t=ev.target.closest('.tab'); if(!t) return;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('p-'+t.dataset.tab).classList.add('active');
+  if(t.dataset.tab==='view3d') setTimeout(()=>viewers.v3d&&viewers.v3d.resize(),50);
+  if(t.dataset.tab==='exploded') setTimeout(()=>{ renderParts(); viewers.vexp&&viewers.vexp.resize(); },50);
+});
+
+/* ============ FILE IMPORT (generic) ============ */
+async function storeFile(file, kind){
+  const id=uid();
+  await dbPut({ id, name:file.name, type:file.type||'application/octet-stream', size:file.size, blob:file });
+  return { id, name:file.name, ext:extOf(file.name), size:file.size, mime:file.type, fileId:id };
+}
+
+/* ============ 2D ============ */
+const drop2d=document.getElementById('drop2d'), file2d=document.getElementById('file2d');
+drop2d.onclick=()=>file2d.click();
+drop2d.addEventListener('dragover',e=>{e.preventDefault();drop2d.classList.add('drag')});
+drop2d.addEventListener('dragleave',()=>drop2d.classList.remove('drag'));
+drop2d.addEventListener('drop',async e=>{e.preventDefault();drop2d.classList.remove('drag');await add2dFiles(e.dataTransfer.files)});
+file2d.onchange=async()=>{ await add2dFiles(file2d.files); file2d.value=''; };
+async function add2dFiles(fl){
+  const e=currentEq(); if(!e){ toast('Selecione/crie um equipamento','err'); return; }
+  for(const f of fl){
+    const meta=await storeFile(f,'2d');
+    e.files2d.push({...meta, label:f.name});
+  }
+  saveMeta(); render2dList(); updateStats(); toast(fl.length+' arquivo(s) 2D importado(s)');
+}
+function render2dList(){
+  const e=currentEq(); const c=document.getElementById('list2d');
+  if(!e||!e.files2d.length){ c.innerHTML='<div class="muted" style="font-size:12px">Nenhum desenho 2D importado.</div>'; return; }
+  c.innerHTML=e.files2d.map(f=>`
+    <div class="file-chip">
+      <span class="pill ${f.ext==='dxf'?'ok':f.ext==='dwg'?'warn':'info'}">${f.ext.toUpperCase()}</span>
+      <span class="fn">${esc(f.name)}</span>
+      <span class="muted">${(f.size/1024).toFixed(0)}KB</span>
+      <button class="small" data-view="${f.id}">ver</button>
+      <button class="small danger" data-del="${f.id}">✕</button>
+    </div>`).join('');
+  c.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>view2d(b.dataset.view));
+  c.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>del2d(b.dataset.del));
+}
+async function del2d(fid){
+  const e=currentEq(); const f=e.files2d.find(x=>x.id===fid); if(f?.fileId) await dbDel(f.fileId);
+  e.files2d=e.files2d.filter(x=>x.id!==fid); saveMeta(); render2dList(); updateStats();
+}
+let current2d=null;
+async function view2d(fid){
+  const e=currentEq(); const f=e.files2d.find(x=>x.id===fid); if(!f) return;
+  current2d=f;
+  const rec=await dbGet(f.fileId); if(!rec) return;
+  const v=document.getElementById('viewer2d'); v.innerHTML='';
+  const ext=f.ext;
+  if(ext==='pdf'){
+    const url=URL.createObjectURL(rec.blob);
+    pdfjsLib.getDocument(url).promise.then(async doc=>{
+      const page=await doc.getPage(1);
+      const vp=v.getBoundingClientRect();
+      const scale=vp.width/ (await page.getViewport({scale:1})).width * 1.0;
+      const viewport=page.getViewport({scale});
+      const canvas=document.createElement('canvas'); canvas.width=viewport.width; canvas.height=viewport.height;
+      v.appendChild(canvas);
+      await page.render({canvasContext:canvas.getContext('2d'),viewport}).promise;
+      URL.revokeObjectURL(url);
+      viewers.v2d={canvas,page,scale:scale,baseW:viewport.width};
+    }).catch(err=>{ v.innerHTML='<div class="hint">Erro ao ler PDF</div>'; });
+  } else if(ext==='dxf'){
+    const text=await rec.blob.text();
+    try{
+      const parser=new DxfParser();
+      const dxf=parser.parseSync(text);
+      renderDxf(v,dxf);
+    }catch(err){ v.innerHTML='<div class="hint">Erro ao ler DXF: '+esc(err.message)+'</div>'; }
+  } else if(['png','jpg','jpeg','svg'].includes(ext)){
+    const url=URL.createObjectURL(rec.blob);
+    const img=document.createElement('img'); img.src=url; img.style.maxWidth='100%'; img.style.maxHeight='100%'; img.style.objectFit='contain';
+    v.appendChild(img);
+  } else {
+    v.innerHTML='<div class="hint">Formato '+esc(ext)+' armazenado para download.<br>Use PDF/DXF/PNG para visualizar, ou converta o arquivo.</div>';
+  }
+}
+function renderDxf(container,dxf){
+  const canvas=document.createElement('canvas'); canvas.width=container.clientWidth; canvas.height=container.clientHeight;
+  container.appendChild(canvas);
+  const ctx=canvas.getContext('2d');
+  let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
+  (dxf.entities||[]).forEach(en=>{
+    if(en.type==='LINE'){ minX=Math.min(minX,en.vertices[0].x,en.vertices[1].x); minY=Math.min(minY,en.vertices[0].y,en.vertices[1].y); maxX=Math.max(maxX,en.vertices[0].x,en.vertices[1].x); maxY=Math.max(maxY,en.vertices[0].y,en.vertices[1].y); }
+    else if(en.type==='CIRCLE'){ minX=Math.min(minX,en.center.x-en.radius);minX=Math.min(minX,en.center.x+en.radius);minY=Math.min(minY,en.center.y-en.radius,en.center.y+en.radius);maxX=Math.max(maxX,en.center.x-en.radius,en.center.x+en.radius);maxY=Math.max(maxY,en.center.y-en.radius,en.center.y+en.radius); }
+    else if(en.type==='LWPOLYLINE'||en.type==='POLYLINE'){ (en.vertices||[]).forEach(vt=>{minX=Math.min(minX,vt.x);minY=Math.min(minY,vt.y);maxX=Math.max(maxX,vt.x);maxY=Math.max(maxY,vt.y)}); }
+  });
+  if(!isFinite(minX)){ ctx.fillStyle='#8aa0b4'; ctx.fillText('DXF vazio',10,20); return; }
+  const w=maxX-minX,h=maxY-minY, pad=30;
+  const s=Math.min((canvas.width-pad*2)/w,(canvas.height-pad*2)/h)||1;
+  const ox=pad-minX*s, oy=canvas.height-pad+minY*s;
+  ctx.strokeStyle='#00d9a3'; ctx.lineWidth=1; ctx.beginPath();
+  (dxf.entities||[]).forEach(en=>{
+    if(en.type==='LINE'){ const a=en.vertices[0],b=en.vertices[1]; ctx.moveTo(ox+a.x*s,oy-a.y*s); ctx.lineTo(ox+b.x*s,oy-b.y*s); }
+    else if(en.type==='CIRCLE'){ ctx.moveTo(ox+(en.center.x+en.radius)*s,oy-en.center.y*s); ctx.arc(ox+en.center.x*s,oy-en.center.y*s,en.radius*s,0,Math.PI*2); }
+    else if(en.type==='LWPOLYLINE'||en.type==='POLYLINE'){ (en.vertices||[]).forEach((vt,i)=>i?ctx.lineTo(ox+vt.x*s,oy-vt.y*s):ctx.moveTo(ox+vt.x*s,oy-vt.y*s)); if(en.shape==='closed') ctx.closePath(); }
+  });
+  ctx.stroke();
+}
+document.getElementById('btnDownload2d').onclick=async()=>{
+  if(!current2d){toast('Selecione um desenho','err');return;}
+  const rec=await dbGet(current2d.fileId); if(rec) download(current2d.name,rec.blob);
+};
+
+/* ============ 3D ============ */
+const drop3d=document.getElementById('drop3d'), file3d=document.getElementById('file3d');
+drop3d.onclick=()=>file3d.click();
+drop3d.addEventListener('dragover',e=>{e.preventDefault();drop3d.classList.add('drag')});
+drop3d.addEventListener('dragleave',()=>drop3d.classList.remove('drag'));
+drop3d.addEventListener('drop',async e=>{e.preventDefault();drop3d.classList.remove('drag');await add3dFiles(e.dataTransfer.files)});
+file3d.onchange=async()=>{ await add3dFiles(file3d.files); file3d.value=''; };
+async function add3dFiles(fl){
+  const e=currentEq(); if(!e){toast('Selecione/crie um equipamento','err');return;}
+  for(const f of fl){
+    const meta=await storeFile(f,'3d');
+    e.files3d.push({...meta, label:f.name});
+  }
+  saveMeta(); render3dList(); updateStats(); toast(fl.length+' arquivo(s) 3D importado(s)');
+}
+function render3dList(){
+  const e=currentEq(); const c=document.getElementById('list3d');
+  if(!e||!e.files3d.length){ c.innerHTML='<div class="muted" style="font-size:12px">Nenhum modelo 3D importado.</div>'; return; }
+  c.innerHTML=e.files3d.map(f=>`
+    <div class="file-chip">
+      <span class="pill ${['stl','obj'].includes(f.ext)?'ok':'warn'}">${f.ext.toUpperCase()}</span>
+      <span class="fn">${esc(f.name)}</span>
+      <span class="muted">${(f.size/1024).toFixed(0)}KB</span>
+      <button class="small" data-view="${f.id}">ver 3D</button>
+      <button class="small" data-explode="${f.id}" title="Adicionar como peça na vista explodida">→ peça</button>
+      <button class="small danger" data-del="${f.id}">✕</button>
+    </div>`).join('');
+  c.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>view3d(b.dataset.view));
+  c.querySelectorAll('[data-explode]').forEach(b=>b.onclick=()=>addToPartsFrom3d(b.dataset.explode));
+  c.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>del3d(b.dataset.del));
+}
+async function del3d(fid){
+  const e=currentEq(); const f=e.files3d.find(x=>x.id===fid); if(f?.fileId) await dbDel(f.fileId);
+  e.files3d=e.files3d.filter(x=>x.id!==fid); saveMeta(); render3dList(); updateStats();
+}
+async function addToPartsFrom3d(fid){
+  const e=currentEq(); const f=e.files3d.find(x=>x.id===fid); if(!f) return;
+  e.parts.push({ id:uid(), code:'', name:f.name, quantity:1, description:'', fileId:f.fileId, ext:f.ext, size:f.size, thumb:null });
+  saveMeta(); renderParts(); updateStats(); toast('Peça adicionada à vista explodida');
+}
+let current3d=null;
+async function view3d(fid){
+  const e=currentEq(); const f=e.files3d.find(x=>x.id===fid); if(!f) return;
+  current3d=f; const rec=await dbGet(f.fileId); if(!rec) return;
+  const v=document.getElementById('viewer3d'); v.innerHTML='';
+  if(f.ext==='stl'){
+    const buf=await rec.blob.arrayBuffer();
+    const geo=new STLLoader().parse(buf);
+    show3d(v,geo,'solid');
+  } else if(f.ext==='obj'){
+    const text=await rec.blob.text();
+    const obj=new OBJLoader().parse(text);
+    let geo=null; obj.traverse(o=>{ if(o.isMesh&&!geo) geo=o.geometry; });
+    if(geo) show3d(v,geo,'solid'); else v.innerHTML='<div class="hint">OBJ sem geometria</div>';
+  } else {
+    v.innerHTML='<div class="hint">Formato '+esc(f.ext)+' armazenado para download.<br>STEP/STP não é renderizável no navegador — exporte para <b>STL</b> ou <b>OBJ</b> no seu CAD.</div>';
+  }
+}
+function show3d(container,geo,mode){
+  const v=container; v.innerHTML='';
+  const w=v.clientWidth,h=v.clientHeight;
+  const scene=new THREE.Scene(); scene.background=new THREE.Color(0x0a121d);
+  const camera=new THREE.PerspectiveCamera(50,w/h,0.1,5000);
+  const renderer=new THREE.WebGLRenderer({antialias:true}); renderer.setSize(w,h); v.appendChild(renderer.domElement);
+  scene.add(new THREE.HemisphereLight(0xffffff,0x222233,1.0));
+  const dir=new THREE.DirectionalLight(0xffffff,1.2); dir.position.set(1,2,3); scene.add(dir);
+  const axes=new THREE.AxesHelper(50); axes.visible=false; scene.add(axes);
+  geo.computeVertexNormals(); geo.center();
+  const mat=new THREE.MeshStandardMaterial({color:0x00d9a3,metalness:.3,roughness:.55,side:THREE.DoubleSide});
+  const mesh=new THREE.Mesh(geo,mat);
+  // scale to fit
+  geo.computeBoundingBox(); const bb=geo.boundingBox; const sz=new THREE.Vector3(); bb.getSize(sz); const mx=Math.max(sz.x,sz.y,sz.z)||1;
+  mesh.scale.setScalar(100/mx);
+  scene.add(mesh);
+  if(mode==='wire'){ mat.wireframe=true; }
+  const controls=new OrbitControls(camera,renderer.domElement);
+  camera.position.set(120,120,180); controls.target.set(0,0,0); controls.update();
+  let raf;
+  function loop(){ raf=requestAnimationFrame(loop); controls.update(); renderer.render(scene,camera); } loop();
+  viewers.v3d={ resize(){ const w2=v.clientWidth,h2=v.clientHeight; renderer.setSize(w2,h2); camera.aspect=w2/h2; camera.updateProjectionMatrix(); },
+    fit(){ camera.position.set(120,120,180); controls.target.set(0,0,0); controls.update(); },
+    toggleWire(){ mat.wireframe=!mat.wireframe; }, toggleAxes(){ axes.visible=!axes.visible; }, dispose(){ cancelAnimationFrame(raf); renderer.dispose(); } };
+}
+document.getElementById('btn3dFit').onclick=()=>viewers.v3d&&viewers.v3d.fit();
+document.getElementById('btn3dWire').onclick=()=>viewers.v3d&&viewers.v3d.toggleWire();
+document.getElementById('btn3dAxes').onclick=()=>viewers.v3d&&viewers.v3d.toggleAxes();
+document.getElementById('btnDownload3d').onclick=async()=>{ if(!current3d){toast('Selecione um modelo','err');return;} const rec=await dbGet(current3d.fileId); if(rec) download(current3d.name,rec.blob); };
+
+/* ============ EXPLODED PARTS ============ */
+function renderParts(){
+  const e=currentEq(); const g=document.getElementById('partGrid');
+  if(!e||!e.parts.length){ g.innerHTML='<div class="muted" style="font-size:12px;grid-column:1/-1">Nenhuma peça. Use "+ Adicionar Peça" ou importe.</div>'; renderExplodedScene(); return; }
+  g.innerHTML=e.parts.map((p,i)=>`
+    <div class="part-card">
+      <div class="ph" data-thumb="${p.id}">${p.thumb?'<img src="'+p.thumb+'">':(p.ext?p.ext.toUpperCase()+'<br><span class="muted">arquivo</span>':'Sem arquivo')}</div>
+      <div class="code">${esc(p.code||'—')}</div>
+      <div class="name">${esc(p.name||'Peça '+(i+1))}</div>
+      <div class="qty">Qtd: ${p.quantity||1}</div>
+      <div class="acts">
+        <button class="small" data-edit="${p.id}">Editar</button>
+        <button class="small" data-dl="${p.id}">⬇</button>
+        <button class="small danger" data-rm="${p.id}">✕</button>
+      </div>
+    </div>`).join('');
+  g.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>editPart(b.dataset.edit));
+  g.querySelectorAll('[data-dl]').forEach(b=>b.onclick=()=>dlPart(b.dataset.dl));
+  g.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>rmPart(b.dataset.rm));
+  renderExplodedScene();
+}
+function editPart(pid){
+  const e=currentEq(); const p=e.parts.find(x=>x.id===pid); if(!p) return;
+  openModal(`
+    <h2>Editar Peça</h2>
+    <label>Código</label><input id="pCode" value="${esc(p.code||'')}">
+    <label>Nome / Descrição</label><input id="pName" value="${esc(p.name||'')}">
+    <div class="grid grid2"><div>
+      <label>Quantidade</label><input id="pQty" type="number" min="1" value="${p.quantity||1}">
+    </div><div>
+      <label>Arquivo (STL/OBJ/PDF/img)</label>
+      <input type="file" id="pFile" accept=".stl,.obj,.step,.stp,.pdf,.png,.jpg,.jpeg,.svg,.dxf">
+    </div></div>
+    <label>Observação</label><textarea id="pDesc" rows="2">${esc(p.description||'')}</textarea>
+    <div class="actions">
+      <button onclick="closeModal()">Cancelar</button>
+      <button class="primary" id="pSave">Salvar</button>
+    </div>`);
+  document.getElementById('pSave').onclick=async()=>{
+    p.code=document.getElementById('pCode').value.trim();
+    p.name=document.getElementById('pName').value.trim();
+    p.quantity=parseInt(document.getElementById('pQty').value)||1;
+    p.description=document.getElementById('pDesc').value.trim();
+    const f=document.getElementById('pFile').files[0];
+    if(f){ const meta=await storeFile(f,'part'); p.fileId=meta.fileId; p.ext=meta.ext; p.size=meta.size; if(['png','jpg','jpeg','svg'].includes(meta.ext)){ p.thumb=await blobToBase64(f); } else p.thumb=null; }
+    saveMeta(); renderParts(); updateStats(); closeModal(); toast('Peça salva');
+  };
+}
+async function dlPart(pid){
+  const e=currentEq(); const p=e.parts.find(x=>x.id===pid); if(!p||!p.fileId){toast('Sem arquivo','err');return;}
+  const rec=await dbGet(p.fileId); if(rec) download((p.name||'peca')+'.'+(p.ext||'bin'),rec.blob);
+}
+function rmPart(pid){
+  const e=currentEq(); const p=e.parts.find(x=>x.id===pid); if(p?.fileId) dbDel(p.fileId);
+  e.parts=e.parts.filter(x=>x.id!==pid); saveMeta(); renderParts(); updateStats();
+}
+document.getElementById('btnAddPart').onclick=()=>{
+  const e=currentEq(); if(!e){toast('Crie um equipamento','err');return;}
+  e.parts.push({id:uid(),code:'',name:'Nova Peça',quantity:1,description:'',fileId:null,ext:null,thumb:null});
+  saveMeta(); renderParts(); updateStats(); editPart(e.parts[e.parts.length-1].id);
+};
+document.getElementById('btnImportParts').onclick=()=>{ document.querySelector('.tab[data-tab="import"]').click(); document.getElementById('fileSmart').click(); };
+document.getElementById('btnExportPartsCsv').onclick=()=>{
+  const e=currentEq(); if(!e) return;
+  const rows=[['Código','Nome','Quantidade','Descrição','Arquivo']];
+  e.parts.forEach(p=>rows.push([p.code||'',p.name||'',p.quantity||1,p.description||'',p.ext||'']));
+  const csv=rows.map(r=>r.map(c=>`"${(c+'').replace(/"/g,'""')}"`).join(',')).join('\n');
+  download((e.code||e.name||'partes')+'_pecas.csv',csv,'text/csv');
+};
+document.getElementById('btnExportPartsZip').onclick=async()=>{
+  const e=currentEq(); if(!e||!e.parts.length){toast('Sem peças','err');return;}
+  const zip=new JSZip();
+  const list=[]; let idx=1;
+  for(const p of e.parts){
+    let fn=(String(idx++).padStart(2,'0')+'_'+(p.code||'peca')+'_'+(p.name||'').replace(/[^a-z0-9]/gi,'_')).slice(0,60);
+    if(p.fileId){ const rec=await dbGet(p.fileId); if(rec){ zip.file(fn+'.'+(p.ext||'bin'),rec.blob); } }
+    list.push({Codigo:p.code,Nome:p.name,Quantidade:p.quantity,Arquivo:p.ext?(''+fn+'.'+p.ext):'',Descricao:p.description});
+  }
+  const ws=XLSX.utils.json_to_sheet(list);
+  zip.file('lista_pecas.xlsx', new Blob([XLSX.write(ws,{type:'array',bookType:'xlsx'})]));
+  const blob=await zip.generateAsync({type:'blob'});
+  download((e.code||e.name||'partes')+'_explodida.zip',blob);
+};
+
+/* Exploded 3D scene */
+async function renderExplodedScene(){
+  const v=document.getElementById('viewerExploded'); if(!v.clientWidth) return;
+  const e=currentEq(); if(!e) return;
+  const parts=e.parts.filter(p=>p.fileId&&['stl','obj'].includes(p.ext));
+  v.innerHTML='';
+  if(!parts.length){ v.innerHTML='<div class="hint">Adicione peças com arquivos <b>STL</b> ou <b>OBJ</b> para ver a vista explodida 3D</div>'; return; }
+  const w=v.clientWidth,h=v.clientHeight;
+  const scene=new THREE.Scene(); scene.background=new THREE.Color(0x0a121d);
+  const camera=new THREE.PerspectiveCamera(50,w/h,0.1,5000);
+  const renderer=new THREE.WebGLRenderer({antialias:true}); renderer.setSize(w,h); v.appendChild(renderer.domElement);
+  scene.add(new THREE.HemisphereLight(0xffffff,0x222233,1.0));
+  const dir=new THREE.DirectionalLight(0xffffff,1.2); dir.position.set(1,2,3); scene.add(dir);
+  const axes=new THREE.AxesHelper(50); scene.add(axes);
+  const group=new THREE.Group(); scene.add(group);
+  const colors=[0x00d9a3,0x0a84ff,0xffb84d,0xff5d5d,0xb388ff,0x3ddc84,0xff80ab,0x80d8ff];
+  let i=0;
+  for(const p of parts){
+    const rec=await dbGet(p.fileId); if(!rec) continue;
+    let geo=null;
+    try{
+      if(p.ext==='stl'){ geo=new STLLoader().parse(await rec.blob.arrayBuffer()); }
+      else if(p.ext==='obj'){ const obj=new OBJLoader().parse(await rec.blob.text()); obj.traverse(o=>{ if(o.isMesh&&!geo) geo=o.geometry; }); }
+    }catch(err){ continue; }
+    if(!geo) continue;
+    geo.computeVertexNormals(); geo.center(); geo.computeBoundingBox();
+    const bb=geo.boundingBox; const sz=new THREE.Vector3(); bb.getSize(sz); const mx=Math.max(sz.x,sz.y,sz.z)||1;
+    const sc=30/mx;
+    const mat=new THREE.MeshStandardMaterial({color:colors[i%colors.length],metalness:.3,roughness:.55,side:THREE.DoubleSide});
+    const mesh=new THREE.Mesh(geo,mat); mesh.scale.setScalar(sc);
+    // arrange exploded along X
+    mesh.position.x = i*70 - (parts.length-1)*35;
+    group.add(mesh); i++;
+  }
+  if(i===0){ v.innerHTML='<div class="hint">Não foi possível carregar geometrias</div>'; return; }
+  const controls=new OrbitControls(camera,renderer.domElement);
+  camera.position.set(0,120,260); controls.target.set(0,0,0); controls.update();
+  let raf; function loop(){ raf=requestAnimationFrame(loop); controls.update(); renderer.render(scene,camera);} loop();
+  if(viewers.vexp) viewers.vexp.dispose?.();
+  viewers.vexp={ resize(){const w2=v.clientWidth,h2=v.clientHeight;renderer.setSize(w2,h2);camera.aspect=w2/h2;camera.updateProjectionMatrix();},
+    fit(){camera.position.set(0,120,260);controls.target.set(0,0,0);controls.update();},
+    dispose(){cancelAnimationFrame(raf);renderer.dispose();} };
+}
+document.getElementById('btnExpFit').onclick=()=>viewers.vexp&&viewers.vexp.fit();
+document.getElementById('btnExpAxes').onclick=()=>{ /* toggle handled at scene */ };
+
+/* ============ BOM ============ */
+function renderBom(filter=''){
+  const e=currentEq(); const tb=document.getElementById('bomBody');
+  if(!e){ tb.innerHTML=''; document.getElementById('bomTotal').textContent=0; document.getElementById('bomQty').textContent=0; return; }
+  let rows=e.bom;
+  if(filter){ const f=filter.toLowerCase(); rows=rows.filter(r=>(r.code+r.description+r.material+r.supplier).toLowerCase().includes(f)); }
+  if(!rows.length){ tb.innerHTML='<tr><td colspan="8" class="muted" style="text-align:center;padding:18px">Nenhum item. Clique em "+ Adicionar item" ou importe.</td></tr>'; }
+  else tb.innerHTML=rows.map((r,i)=>`
+    <tr>
+      <td>${i+1}</td>
+      <td><input data-f="code" data-id="${r.id}" value="${esc(r.code||'')}"></td>
+      <td><input data-f="description" data-id="${r.id}" value="${esc(r.description||'')}"></td>
+      <td><input data-f="quantity" data-id="${r.id}" type="number" min="0" value="${r.quantity||0}" style="width:70px"></td>
+      <td><input data-f="unit" data-id="${r.id}" value="${esc(r.unit||'')}" style="width:70px"></td>
+      <td><input data-f="material" data-id="${r.id}" value="${esc(r.material||'')}"></td>
+      <td><input data-f="supplier" data-id="${r.id}" value="${esc(r.supplier||'')}"></td>
+      <td><button class="small danger" data-rm="${r.id}">✕</button></td>
+    </tr>`).join('');
+  tb.querySelectorAll('input').forEach(inp=>inp.onchange=()=>{ const r=e.bom.find(x=>x.id===inp.dataset.id); if(r){ r[inp.dataset.f]=inp.value; saveMeta(); updateStats(); } });
+  tb.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{ e.bom=e.bom.filter(x=>x.id!==b.dataset.rm); saveMeta(); renderBom(filter); updateStats(); });
+  document.getElementById('bomTotal').textContent=e.bom.length;
+  document.getElementById('bomQty').textContent=e.bom.reduce((s,r)=>s+(parseFloat(r.quantity)||0),0);
+}
+document.getElementById('btnBomAdd').onclick=()=>{
+  const e=currentEq(); if(!e){toast('Crie um equipamento','err');return;}
+  e.bom.push({id:uid(),code:'',description:'',quantity:1,unit:'un',material:'',supplier:''});
+  saveMeta(); renderBom(document.getElementById('bomSearch').value); updateStats();
+};
+document.getElementById('bomSearch').oninput=e=>renderBom(e.target.value);
+document.getElementById('btnBomImport').onclick=()=>{ document.querySelector('.tab[data-tab="import"]').click(); document.getElementById('fileSmart').click(); };
+document.getElementById('btnBomExportCsv').onclick=()=>{
+  const e=currentEq(); if(!e||!e.bom.length){toast('BOM vazia','err');return;}
+  const rows=[['Código','Descrição','Quantidade','Unidade','Material','Fornecedor']];
+  e.bom.forEach(r=>rows.push([r.code,r.description,r.quantity,r.unit,r.material,r.supplier]));
+  const csv=rows.map(r=>r.map(c=>`"${(c+'').replace(/"/g,'""')}"`).join(',')).join('\n');
+  download((e.code||e.name||'bom')+'.csv',csv,'text/csv');
+};
+document.getElementById('btnBomExportXlsx').onclick=()=>{
+  const e=currentEq(); if(!e||!e.bom.length){toast('BOM vazia','err');return;}
+  const data=e.bom.map(r=>({Código:r.code,Descrição:r.description,Quantidade:r.quantity,Unidade:r.unit,Material:r.material,Fornecedor:r.supplier}));
+  const ws=XLSX.utils.json_to_sheet(data);
+  ws['!cols']=[{wch:14},{wch:40},{wch:10},{wch:8},{wch:18},{wch:18}];
+  const wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb,ws,'BOM');
+  const arr=XLSX.write(wb,{type:'array',bookType:'xlsx'});
+  download((e.code||e.name||'bom')+'.xlsx',new Blob([arr],{type:'application/octet-stream'}));
+};
+document.getElementById('btnBomExportPdf').onclick=()=>{
+  const e=currentEq(); if(!e||!e.bom.length){toast('BOM vazia','err');return;}
+  const win=window.open('','_blank');
+  const rows=e.bom.map(r=>`<tr><td>${esc(r.code)}</td><td>${esc(r.description)}</td><td>${r.quantity}</td><td>${esc(r.unit)}</td><td>${esc(r.material)}</td><td>${esc(r.supplier)}</td></tr>`).join('');
+  win.document.write(`<html><head><title>BOM - ${esc(e.name)}</title><style>
+    body{font-family:Arial;padding:30px;color:#222}h1{font-size:20px}table{width:100%;border-collapse:collapse;margin-top:14px}
+    th,td{border:1px solid #ccc;padding:7px;text-align:left;font-size:12px}th{background:#eee}
+    .h{color:#00a080}</style></head><body>
+    <h1 class="h">ZEFER MECANICA — Lista de Materiais</h1>
+    <p><b>Equipamento:</b> ${esc(e.name)} (${esc(e.code)}) · <b>Categoria:</b> ${esc(e.category)} · <b>Local:</b> ${esc(e.location)}</p>
+    <table><thead><tr><th>Código</th><th>Descrição</th><th>Qtd</th><th>Un.</th><th>Material</th><th>Fornecedor</th></tr></thead>
+    <tbody>${rows}</tbody></table></body></html>`);
+  win.document.close(); setTimeout(()=>win.print(),400);
+};
+
+/* ============ SMART IMPORT ============ */
+const KEYWORDS={
+  code:['codigo','cód','cod','part number','partnumber','ref','referencia','item','peça','peca','nº','n°','numero','tag'],
+  description:['descrição','descricao','desc','nome','denominação','denominacao','componente','detalhe','material'],
+  quantity:['qtd','quantidade','qty','q.','qnt','amount','qtde','unidades'],
+  unit:['un','unid','unit','unidade','medida'],
+  material:['material','espec','especificação','especificacao','liga','acabamento'],
+  supplier:['fornecedor','supplier','fabricante','marca','cliente','fab']
+};
+function guessField(header){
+  const h=header.toLowerCase().trim();
+  for(const [field,words] of Object.entries(KEYWORDS)){
+    if(words.some(w=>h.includes(w))) return field;
+  }
+  return null;
+}
+function isNumericCol(vals){ let n=0; vals.forEach(v=>{ if(v!==''&&v!=null&&!isNaN(parseFloat(v))) n++; }); return n>vals.length*0.6; }
+
+const dropSmart=document.getElementById('dropSmart'), fileSmart=document.getElementById('fileSmart');
+dropSmart.onclick=()=>fileSmart.click();
+dropSmart.addEventListener('dragover',e=>{e.preventDefault();dropSmart.classList.add('drag')});
+dropSmart.addEventListener('dragleave',()=>dropSmart.classList.remove('drag'));
+dropSmart.addEventListener('drop',async e=>{e.preventDefault();dropSmart.classList.remove('drag');await handleSmart(e.dataTransfer.files[0])});
+fileSmart.onchange=async()=>{ if(fileSmart.files[0]) await handleSmart(fileSmart.files[0]); fileSmart.value=''; };
+
+async function handleSmart(file){
+  const e=currentEq(); if(!e){toast('Selecione/crie um equipamento','err');return;}
+  const ext=extOf(file.name);
+  let rows=[];
+  try{
+    if(['xlsx','xls','csv'].includes(ext)){
+      const buf=await file.arrayBuffer();
+      const wb=XLSX.read(buf,{type:'array'});
+      const ws=wb.Sheets[wb.SheetNames[0]];
+      rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:''});
+    } else if(ext==='pdf'){
+      rows=await extractPdfRows(file);
+    } else { toast('Formato não suportado: '+ext,'err'); return; }
+  }catch(err){ toast('Erro ao ler arquivo: '+err.message,'err'); return; }
+  if(!rows.length||rows.length<2){ toast('Arquivo sem dados utilizáveis','err'); return; }
+  smartFlow(rows, file.name, e);
+}
+
+async function extractPdfRows(file){
+  const url=URL.createObjectURL(file);
+  const doc=await pdfjsLib.getDocument(url).promise;
+  const all=[];
+  for(let pi=1;pi<=Math.min(doc.numPages,30);pi++){
+    const page=await doc.getPage(pi);
+    const content=await page.getTextContent();
+    // group items by y position into rows
+    const lines={};
+    content.items.forEach(it=>{
+      const y=Math.round(it.transform[5]);
+      const x=it.transform[4];
+      if(!lines[y]) lines[y]={items:[],y};
+      lines[y].items.push({x,text:it.str});
+    });
+    const sorted=Object.values(lines).sort((a,b)=>b.y-a.y);
+    sorted.forEach(l=>{ l.items.sort((a,b)=>a.x-b.x); all.push(l.items.map(i=>i.text).join('  ').split(/\s{2,}|\t/).map(s=>s.trim()).filter(Boolean)); });
+  }
+  URL.revokeObjectURL(url);
+  // try to detect a header row
+  return all.filter(r=>r.length>1);
+}
+
+function smartFlow(rawRows, fname, e){
+  const area=document.getElementById('smartArea');
+  if(!e){ toast('Equipamento inválido','err'); return; }
+  // Find header row: the row with most keyword matches
+  let headerIdx=-0, bestScore=-1;
+  rawRows.forEach((r,idx)=>{
+    let s=0; r.forEach(c=>{ if(guessField(String(c))) s++; });
+    if(s>bestScore){ bestScore=s; headerIdx=idx; }
+  });
+  let headers, dataRows;
+  if(bestScore>=2){
+    headers=rawRows[headerIdx].map(c=>String(c));
+    dataRows=rawRows.slice(headerIdx+1).filter(r=>r.length>1);
+  } else {
+    // no clear header: synthesize by position with heuristics
+    headers=rawRows[0].map((c,i)=>'Coluna '+(i+1));
+    dataRows=rawRows.filter(r=>r.length>1);
+  }
+  // auto map
+  const mapping={};
+  headers.forEach((h,i)=>{
+    const f=guessField(h);
+    if(f && mapping[f]===undefined) mapping[f]=i;
+  });
+  // fill unmapped by data heuristics
+  const cols=headers.map((_,i)=>dataRows.map(r=>r[i]||''));
+  Object.keys(KEYWORDS).forEach(f=>{
+    if(mapping[f]===undefined){
+      for(let i=0;i<cols.length;i++){
+        if(f==='quantity'&&isNumericCol(cols[i])){ mapping[f]=i; break; }
+      }
+    }
+  });
+  const previewRows=dataRows.slice(0,6);
+  const fieldNames={code:'Código',description:'Descrição',quantity:'Quantidade',unit:'Unidade',material:'Material',supplier:'Fornecedor'};
+
+  area.innerHTML=`
+    <div class="card">
+      <h2>Pré-visualização <span class="sub">${esc(fname)} · ${dataRows.length} linha(s) detectada(s)</span></h2>
+      <div class="note">Cabeçalho detectado na <b>linha ${headerIdx+1}</b>. Confira o mapeamento de cada coluna e ajuste se necessário.</div>
+      <label>Mapear colunas → campos</label>
+      <div id="mapRows"></div>
+      <div class="row" style="margin-top:12px">
+        <label style="margin:0">Destino:</label>
+        <select id="smartTarget">
+          <option value="bom">Lista de Materiais (BOM)</option>
+          <option value="parts">Vista Explodida (Peças)</option>
+        </select>
+        <div class="spacer"></div>
+        <button onclick="document.getElementById('smartArea').innerHTML=''">Cancelar</button>
+        <button class="primary" id="smartImport">Importar ${dataRows.length} itens</button>
+      </div>
+      <div class="preview-data">
+        <table>
+          <thead><tr>${headers.map((h,i)=>`<th>${esc(h)}${mapping[Object.keys(mapping).find(k=>mapping[k]===i)]?' <span class="pill ok">'+(fieldNames[Object.keys(mapping).find(k=>mapping[k]===i)]||'')+'</span>':''}</th>`).join('')}</tr></thead>
+          <tbody>${previewRows.map(r=>`<tr>${r.map(c=>`<td>${esc(String(c))}</td>`).join('')}</tr>`).join('')}</tbody>
+        </table>
+      </div>
+    </div>`;
+
+  const mr=document.getElementById('mapRows');
+  headers.forEach((h,i)=>{
+    const cur=Object.keys(mapping).find(k=>mapping[k]===i);
+    const div=document.createElement('div'); div.className='map-row';
+    div.innerHTML=`<span class="src">${esc(h)}</span>
+      <select data-col="${i}">
+        <option value="">— ignorar —</option>
+        ${Object.keys(fieldNames).map(f=>`<option value="${f}" ${cur===f?'selected':''}>${fieldNames[f]}</option>`).join('')}
+      </select>`;
+    mr.appendChild(div);
+  });
+  document.getElementById('smartImport').onclick=()=>{
+    try{
+    const eq=currentEq()||e;
+    if(!eq){ toast('Selecione um equipamento','err'); return; }
+    const finalMap={};
+    mr.querySelectorAll('select').forEach(sel=>{ if(sel.value) finalMap[sel.value]=parseInt(sel.dataset.col); });
+    const target=document.getElementById('smartTarget').value;
+    let added=0;
+    dataRows.forEach(r=>{
+      const get=f=>{ const i=finalMap[f]; return i===undefined?'':String(r[i]??'').trim(); };
+      const qty=parseFloat(get('quantity'))||1;
+      const item={ id:uid(),
+        code:get('code'), description:get('description'),
+        quantity:qty, unit:get('unit')||'un', material:get('material'), supplier:get('supplier') };
+      if(!item.code&&!item.description) return;
+      if(target==='bom'){ eq.bom.push(item); }
+      else { eq.parts.push({ id:uid(), code:item.code, name:item.description, quantity:item.quantity, description:item.material+(item.supplier?(' · '+item.supplier):''), fileId:null, ext:null, thumb:null }); }
+      added++;
+    });
+    saveMeta(); renderBom(); renderParts(); updateStats();
+    area.innerHTML='';
+    toast(added+' itens importados para '+(target==='bom'?'BOM':'Vista Explodida'),'ok');
+    if(target==='bom') document.querySelector('.tab[data-tab="bom"]').click();
+    else document.querySelector('.tab[data-tab="exploded"]').click();
+    }catch(err){ console.error(err); toast('Erro ao importar: '+err.message,'err'); }
+  };
+}
+
+/* ============ MODAL ============ */
+function openModal(html){ document.getElementById('modalBox').innerHTML=html; document.getElementById('modalBg').classList.add('show'); }
+window.closeModal=()=>document.getElementById('modalBg').classList.remove('show');
+document.getElementById('modalBg').addEventListener('click',e=>{ if(e.target.id==='modalBg') closeModal(); });
+
+/* ============ BACKUP/RESTORE ============ */
+document.getElementById('btnExportJson').onclick=async()=>{
+  // export metadata + file blobs
+  const pack=JSON.parse(JSON.stringify(equipments));
+  for(const eq of pack){
+    for(const f of [...eq.files2d,...eq.files3d,...eq.parts]){
+      if(f.fileId){ const rec=await dbGet(f.fileId); if(rec){ const b64=await blobToBase64(rec.blob); f.__blob=b64; f.__type=rec.type; f.__name=rec.name; } }
+    }
+  }
+  download('zefer_mecanica_backup.json',JSON.stringify(pack,null,2),'application/json');
+};
+document.getElementById('fileImportJson').onchange=async ev=>{
+  const f=ev.target.files[0]; if(!f) return;
+  try{
+    const pack=JSON.parse(await f.text());
+    if(!Array.isArray(pack)) throw new Error('formato inválido');
+    for(const eq of pack){
+      for(const f2 of [...(eq.files2d||[]),...(eq.files3d||[]),...(eq.parts||[])]){
+        if(f2.__blob){ const blob=dataURLtoBlob(f2.__blob); const id=uid(); await dbPut({id,name:f2.__name,type:f2.__type,blob}); f2.fileId=id; delete f2.__blob; delete f2.__type; delete f2.__name; }
+      }
+    }
+    equipments=pack; saveMeta(); renderSidebar(); if(equipments.length) selectEq(equipments[0].id); else blankForm();
+    toast('Backup restaurado: '+pack.length+' equipamento(s)');
+  }catch(err){ toast('Erro: '+err.message,'err'); }
+};
+
+/* ============ RENDER ALL ============ */
+function renderAll(){
+  render2dList(); render3dList(); renderParts(); renderBom(); updateStats();
+  document.getElementById('viewer2d').innerHTML='<div class="hint">Selecione um desenho na lista acima para visualizar</div>';
+  document.getElementById('viewer3d').innerHTML='<div class="hint">Selecione um modelo 3D na lista acima<br><span class="muted">Arraste para girar · Scroll para zoom</span></div>';
+}
+
+/* ============ WIRING ============ */
+document.getElementById('btnNewEq').onclick=newEquipment;
+document.getElementById('btnSaveInfo').onclick=saveInfo;
+document.getElementById('btnDeleteEq').onclick=()=>{ const e=currentEq(); if(e && confirm('Excluir equipamento "'+e.name+'" e todos os seus arquivos?')) deleteEq(e.id); };
+document.getElementById('btnDuplicateEq').onclick=duplicateEq;
+document.getElementById('btnZoomIn2d').onclick=()=>{ if(viewers.v2d){ const v=document.getElementById('viewer2d'); viewers.v2d.scale*=1.2; view2dReRender(); } };
+document.getElementById('btnZoomOut2d').onclick=()=>{ if(viewers.v2d){ viewers.v2d.scale/=1.2; view2dReRender(); } };
+document.getElementById('btnFit2d').onclick=()=>{ if(current2d) view2d(current2d.id); };
+function view2dReRender(){ if(current2d) view2d(current2d.id); }
+
+window.addEventListener('resize',()=>{ viewers.v3d&&viewers.v3d.resize(); viewers.vexp&&viewers.vexp.resize(); });
+
+/* ============ INIT ============ */
+(async function init(){
+  db=await openDB();
+  loadMeta();
+  renderSidebar();
+  if(equipments.length){ selectEq(equipments[0].id); } else { blankForm(); renderAll(); }
+})();
+</script>
+</body>
+</html>
